@@ -23,10 +23,8 @@ public class OrderServiceTest {
         request.setDetailAddr("GangNam");
         request.setName("SM");
         request.setRecipient_tel("010-1111-1111");
-        request.setItemCNT(3);
-        request.setTotalPrice(20000);
         request.setZipcode("111111");
-        request.setMemberId("rjy1209");
+        request.setMemberId("ysm0419");
 
         // when
         orderService.createOrder(request);

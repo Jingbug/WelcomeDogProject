@@ -11,4 +11,6 @@ public interface CartService {
     boolean add(CartDTO.Request request);
     boolean findCart(Long cartSeq);
     List<Cart> findMyCart(MemberDTO.Request request);
+
+    boolean delete(Long memberSeq);
 }

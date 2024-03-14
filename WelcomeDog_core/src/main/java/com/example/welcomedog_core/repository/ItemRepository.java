@@ -16,4 +16,6 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
 
     // 상품번호로 존재 여부 확인
     boolean existsByItemSeq(Long itemSeq);
+
+    Optional<Item> findItemByItemSeq(Long itemSeq);
 }

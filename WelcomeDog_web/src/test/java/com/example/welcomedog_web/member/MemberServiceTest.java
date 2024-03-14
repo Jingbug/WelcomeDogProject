@@ -20,7 +20,7 @@ public class MemberServiceTest {
     void join() {
         // given
         MemberDTO.Request request = new MemberDTO.Request();
-        request.setMemberId("ysm419");
+        request.setMemberId("ysm0419");
         request.setPassword("1234");
         request.setMemberName("SM");
         request.setTel("010-1111-1111");
@@ -28,7 +28,7 @@ public class MemberServiceTest {
 
         // when
         memberService.join(request);
-        boolean result = memberService.findMember("rjy1209");
+        boolean result = memberService.findMember("ysm0419");
 
         // then
         Assertions.assertThat(result).isEqualTo(true);

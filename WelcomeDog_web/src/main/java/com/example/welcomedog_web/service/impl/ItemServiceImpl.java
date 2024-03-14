@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
@@ -20,7 +21,7 @@ public class ItemServiceImpl implements ItemService {
 
     // 상품번호로 조회
     @Override
-    public boolean findItem(Long itemSeq) {
+    public boolean existItem(Long itemSeq) {
         return itemRepository.existsByItemSeq(itemSeq);
     }
 
@@ -29,5 +30,12 @@ public class ItemServiceImpl implements ItemService {
     public List<Item> selectAllItem() {
         ArrayList<Item> allItem = itemRepository.findAll();
         return allItem;
+    }
+
+    @Override
+    public Item findItem(Long itemSeq) {
+        Optional<Item> item = itemRepository.findItemByItemSeq(itemSeq);
+        Item item1 = item.get();
+        return item1;
     }
 }

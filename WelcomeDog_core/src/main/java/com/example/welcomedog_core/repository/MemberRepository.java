@@ -16,4 +16,6 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 
     // 모든 사용자 조회
     ArrayList<Member> findAll();
+
+    Optional<Member> findMemberByMemberSeq(Long memberSeq);
 }

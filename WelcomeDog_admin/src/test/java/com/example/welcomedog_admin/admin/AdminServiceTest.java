@@ -89,9 +89,9 @@ public class AdminServiceTest {
     void reg() {
         // given
         ItemDTO.Request request = new ItemDTO.Request();
-        request.setItemName("itemA");
+        request.setItemName("itemC");
         request.setItemImg("~");
-        request.setPrice(10000);
+        request.setPrice(15000);
         request.setItemInfo("This is itemA");
 
         // when

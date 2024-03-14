@@ -19,4 +19,5 @@ public interface MemberService {
 
     // MemberId로 상세정보 조회
     MemberDTO.Response memberDetail(String memberId);
+
 }

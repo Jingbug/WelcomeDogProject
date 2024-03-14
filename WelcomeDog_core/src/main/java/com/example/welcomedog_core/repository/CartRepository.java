@@ -13,4 +13,6 @@ public interface CartRepository extends JpaRepository<Cart, Long> {
 
     // 장바구니번호로 존재 여부 확인
     boolean existsByCartSeq(Long CartSeq);
+
+    void deleteByMemberSeq(Member memberSeq);
 }

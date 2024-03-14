@@ -10,7 +10,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
     // 모든 주문 조회
     ArrayList<Order> findAll();
 
-    // 주문로 주문리스트 조회
+    // 주문번호로 주문리스트 조회
     Optional<Order> findOrderByOrderSeq(Long orderSeq);
 
     // 주문번호로 존재여부 확인

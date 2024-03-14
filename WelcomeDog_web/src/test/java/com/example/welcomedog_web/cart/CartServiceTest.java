@@ -23,8 +23,8 @@ public class CartServiceTest {
     void add() {
         // given
         CartDTO.Request request = new CartDTO.Request();
-        request.setCartItemCNT(7);
-        request.setMemberId("ysm419");
+        request.setCartItemCNT(3);
+        request.setMemberId("ysm0419");
         request.setItemName("itemA");
 
         // when
@@ -39,7 +39,7 @@ public class CartServiceTest {
     void myCart() {
         // given
         MemberDTO.Request request = new MemberDTO.Request();
-        request.setMemberId("rjy1209");
+        request.setMemberId("ysm0419");
 
         // when
         List<Cart> myCart = cartService.findMyCart(request);
@@ -48,5 +48,13 @@ public class CartServiceTest {
         for (int i=0; i< myCart.size(); i++) {
             System.out.println(myCart.get(i));
         }
+    }
+
+    @Test
+    @DisplayName("Delete Cart")
+    void delete() {
+        boolean result = cartService.delete(1L);
+
+        Assertions.assertThat(result).isEqualTo(true);
     }
 }

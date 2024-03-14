@@ -53,10 +53,18 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public List<Cart> findMyCart(MemberDTO.Request request) {
-        System.out.println("request = " + request.getMemberId());
         Optional<Member> byMemberSeq = memberRepository.findByMemberId(request.getMemberId());
         Member member = byMemberSeq.get();
         ArrayList<Cart> cart = cartRepository.findCartsByMemberSeq(member);
         return  cart;
+    }
+
+    @Override
+    @Transactional
+    public boolean delete(Long memberSeq) {
+        Optional<Member> memberByMemberSeq = memberRepository.findMemberByMemberSeq(memberSeq);
+        Member member = memberByMemberSeq.get();
+        cartRepository.deleteByMemberSeq(member);
+        return true;
     }
 }
