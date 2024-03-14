@@ -75,7 +75,7 @@ public class AdminServiceTest {
         // given
         OrderDTO.Request request = new OrderDTO.Request();
         request.setOrderSeq(1L);
-        request.setStatus(OrderStatus.SHIPPING);
+        request.setStatus(OrderStatus.PREPARING);
 
         // when
         boolean result = adminService.updateOrderStatus(request);

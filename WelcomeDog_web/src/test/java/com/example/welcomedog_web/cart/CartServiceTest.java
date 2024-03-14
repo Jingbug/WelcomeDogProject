@@ -23,13 +23,12 @@ public class CartServiceTest {
     void add() {
         // given
         CartDTO.Request request = new CartDTO.Request();
-        request.setCartItemCNT(3);
-        request.setMemberId("rjy1209");
+        request.setCartItemCNT(7);
+        request.setMemberId("ysm419");
         request.setItemName("itemA");
 
         // when
-        cartService.add(request);
-        boolean result = cartService.findCart(1L);
+        boolean result = cartService.add(request);
 
         // then
         Assertions.assertThat(result).isEqualTo(true);

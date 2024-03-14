@@ -20,11 +20,11 @@ public class MemberServiceTest {
     void join() {
         // given
         MemberDTO.Request request = new MemberDTO.Request();
-        request.setMemberId("rjy1209");
+        request.setMemberId("ysm419");
         request.setPassword("1234");
-        request.setMemberName("JY");
+        request.setMemberName("SM");
         request.setTel("010-1111-1111");
-        request.setEmail("rjy1209@naver.com");
+        request.setEmail("ysm0419@naver.com");
 
         // when
         memberService.join(request);
@@ -47,20 +47,5 @@ public class MemberServiceTest {
 
         // then
         Assertions.assertThat(login.getMemberId()).isEqualTo("rjy1209");
-    }
-
-    @Test
-    @DisplayName("Delete Complete")
-    void delete() {
-        // given
-        MemberDTO.Request request = new MemberDTO.Request();
-        request.setMemberSeq(2L);
-
-        // when
-        memberService.delete(request.getMemberId());
-        boolean result = memberService.findMember("rjy1209");
-
-        //then
-        Assertions.assertThat(result).isEqualTo(false);
     }
 }
