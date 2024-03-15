@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>Cart</title>
     <script>
-    const memberId="<%=memberld%>"
-    Window.localStorge.setltem('memberId',memberld);
-
-    document.getElementById('memberld').value=memberId;
-    </script>
+    const handle = () => {
+      const memberId = window.document.getElementById("id").value;
+      localStorage.setItem('memberId', memberId);
+    }
+  </script>
 </head>
 <body>
 <h1> Cart List </h1>
