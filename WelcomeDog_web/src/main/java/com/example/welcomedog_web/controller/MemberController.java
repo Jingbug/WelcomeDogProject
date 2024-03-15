@@ -29,13 +29,13 @@ public class MemberController {
     public String login(@ModelAttribute MemberDTO.Request request) {
         Member login = memberService.login(request);
         if (login == null) {
-            return "/index";
+            return "index";
         }
-        return "/page/main";
+        return "page/main";
     }
 
     @GetMapping("/members/logout")
     public String logout() {
-        return "/index";
+        return "index";
     }
 }

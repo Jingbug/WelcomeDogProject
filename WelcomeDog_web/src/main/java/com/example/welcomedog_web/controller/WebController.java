@@ -8,6 +8,6 @@ public class WebController {
 
     @GetMapping("/main")
     public String main() {
-        return "/page/main";
+        return "page/main";
     }
 }

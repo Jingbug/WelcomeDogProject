@@ -28,7 +28,7 @@ public class CartController {
     public String myCartList(@ModelAttribute MemberDTO.Request request, Model model) {
         List<Cart> carts = cartService.findMyCart(request);
         if (carts == null) {
-            return "/page/main";
+            return "page/main";
         } else {
             model.addAttribute("carts", carts);
             return "page/cart";
