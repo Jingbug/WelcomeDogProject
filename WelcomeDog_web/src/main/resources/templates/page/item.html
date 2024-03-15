@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script>
+        const memberId="<%=memberld%>"
+        Window.localStorge.setltem('memberId',memberld);
+    
+        document.getElementById('memberld').value=memberId;
+    </script>
 </head>
 <body>
     <h1> Item List </h1>
