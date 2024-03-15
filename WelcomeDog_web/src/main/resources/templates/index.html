@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Index</title>
+  <script>
+    const handle = () => {
+      const memberId = window.document.getElementById("id").value;
+      localStorage.setItem('memberId', memberId);
+    }
+  </script>
 </head>
 <body>
 <div class="container">
   <div>
     <h1>Login Page</h1>
     <form method="post" action="/members/login" enctype="multipart/form-data">
-      ID : <input type="text" name="memberId"><br>
+      ID : <input id="id" type="text" name="memberId"><br>
       PW : <input type="password" name="password">
-      <button type="submit"> submit </button>
+      <button type="submit" onclick={handle()}> submit </button>
     </form>
     <a href="/members/join"> SignUp</a>
   </div> <!-- /container -->
