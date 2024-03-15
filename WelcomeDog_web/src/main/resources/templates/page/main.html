@@ -4,10 +4,14 @@
   <meta charset="UTF-8">
   <title>Main</title>
   <script>
-    const memberId="<%=memberld%>"
-    Window.localStorge.setltem('memberId',memberld);
+    const memberId="<%=memberld%>";
+    window.localStorge.setltem('memberId',memberld);
 
     document.getElementById('memberld').value=memberId;
+    
+    function logout() {
+      window.localStorage.clear();
+    }
   </script>
 </head>
 <body>
@@ -25,7 +29,7 @@
     </form>
     <!--<a href="orderList.html"> My Order </a>
     <hr>
-    <a href="members/logout"> Logout </a>-->
+    <a href="#" onclick="logout()">Logout</a>
   </div>
 
 </div> <!-- /container -->
