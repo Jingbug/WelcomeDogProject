@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>OrderList</title>
-    <script>
-    const memberId="<%=memberld%>"
-    Window.localStorge.setltem('memberId',memberld);
-
-    document.getElementById('memberld').value=memberId;
-    </script>
+  <meta charset="UTF-8">
+  <title>OrderList</title>
+  <script>
+    const handle = () => {
+      const memberId = window.document.getElementById("id").value;
+      localStorage.setItem('memberId', memberId);
+    }
+  </script>
 </head>
 <body>
 
