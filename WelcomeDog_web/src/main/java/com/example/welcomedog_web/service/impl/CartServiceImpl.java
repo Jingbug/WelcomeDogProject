@@ -54,17 +54,25 @@ public class CartServiceImpl implements CartService {
     @Override
     public List<Cart> findMyCart(MemberDTO.Request request) {
         Optional<Member> byMemberSeq = memberRepository.findByMemberId(request.getMemberId());
-        Member member = byMemberSeq.get();
-        ArrayList<Cart> cart = cartRepository.findCartsByMemberSeq(member);
-        return  cart;
+        if (byMemberSeq.isPresent()) {
+            Member member = byMemberSeq.get();
+            ArrayList<Cart> cart = cartRepository.findCartsByMemberSeq(member);
+            return cart;
+        } else {
+            throw new NullPointerException("No Cart List");
+        }
     }
 
     @Override
     @Transactional
     public boolean delete(Long memberSeq) {
         Optional<Member> memberByMemberSeq = memberRepository.findMemberByMemberSeq(memberSeq);
-        Member member = memberByMemberSeq.get();
-        cartRepository.deleteByMemberSeq(member);
-        return true;
+        if (memberByMemberSeq.isPresent()) {
+            Member member = memberByMemberSeq.get();
+            cartRepository.deleteByMemberSeq(member);
+            return true;
+        } else {
+            throw new NullPointerException("No CartList");
+        }
     }
 }

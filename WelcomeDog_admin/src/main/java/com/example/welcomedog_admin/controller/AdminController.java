@@ -51,6 +51,6 @@ public class AdminController {
     @PostMapping("/addItem")
     public String addItem(@ModelAttribute ItemDTO.Request request) {
         adminService.reg(request);
-        return "page/selectItemList";
+        return "redirect:/admin/selectItemList";
     }
 }

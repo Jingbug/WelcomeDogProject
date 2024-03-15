@@ -39,6 +39,7 @@ public class OrderServiceImpl implements OrderService {
 
             int totalPrice = 0;
             int totalItemCNT = 0;
+
             System.out.println("cartsByMemberSeq = " + cartsByMemberSeq.size());
             for (Cart cart : cartsByMemberSeq) {
                 System.out.println("cart.getCartItemCNT() = " + cart.getCartItemCNT());

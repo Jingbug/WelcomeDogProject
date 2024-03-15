@@ -28,11 +28,14 @@ public class MemberController {
     @PostMapping("/members/login")
     public String login(@ModelAttribute MemberDTO.Request request) {
         Member login = memberService.login(request);
+        if (login == null) {
+            return "/index";
+        }
         return "/page/main";
     }
 
     @GetMapping("/members/logout")
-    public String logout(HttpServletRequest request, Model model) {
-        return "index";
+    public String logout() {
+        return "/index";
     }
 }

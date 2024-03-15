@@ -27,7 +27,11 @@ public class CartController {
     @PostMapping("/myList")
     public String myCartList(@ModelAttribute MemberDTO.Request request, Model model) {
         List<Cart> carts = cartService.findMyCart(request);
-        model.addAttribute("carts", carts);
-        return "page/cart";
+        if (carts == null) {
+            return "/page/main";
+        } else {
+            model.addAttribute("carts", carts);
+            return "page/cart";
+        }
     }
 }

@@ -14,14 +14,20 @@
     <hr>
     <h3> MyCart </h3>
     <form action="/cart/myList" method="post">
-      memberId : <input type="text" name="memberId">
+      <input id="id" type="text" name="memberId" value="" hidden="hidden">
       <button type="submit"> submit </button>
     </form>
-    <!--<a href="orderList.html"> My Order </a>
+<!--    <a href="orderList.html"> My Order </a>-->
     <hr>
-    <a href="members/logout"> Logout </a>-->
+    <a href="/members/logout" onclick={logout()}> Logout </a>
   </div>
 
 </div> <!-- /container -->
 </body>
 </html>
+<script>
+  document.getElementById("id").value = localStorage.getItem("memberId");
+  function logout() {
+    localStorage.clear();
+  }
+</script>

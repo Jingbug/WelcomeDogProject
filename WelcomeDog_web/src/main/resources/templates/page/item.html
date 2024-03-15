@@ -11,6 +11,7 @@
         <tr>
             <th>ItemNum</th>
             <th>Name</th>
+            <th>Price</th>
             <th>Image</th>
             <th>Info</th>
         </tr>
@@ -19,6 +20,7 @@
         <tr th:each="item : ${allItem}">
             <td th:text="${item.itemSeq}"></td>
             <td th:text="${item.itemName}"></td>
+            <td th:text="${item.price}"></td>
             <td th:text="${item.itemImg}"></td>
             <td th:text="${item.itemInfo}"></td>
         </tr>
@@ -27,14 +29,17 @@
     <hr>
     <h3> Add Item to My Cart </h3>
     <form method="post" action="/cart/add" enctype="multipart/form-data">
-        MemberId : <input type="text" name="memberId"><br>
+        <input id="id" type="text" name="memberId" value="" hidden="hidden"><br>
         ItemName : <input type="text" name="itemName"><br>
         CNT : <input type="number" name="cartItemCNT">
         <button type="submit"> submit </button>
     </form>
     <br>
     <div>
-        <a href="/"> Move to Home </a>
+        <a href="/main"> Move to Home </a>
     </div>
 </body>
 </html>
+<script>
+    document.getElementById("id").value = localStorage.getItem("memberId");
+</script>

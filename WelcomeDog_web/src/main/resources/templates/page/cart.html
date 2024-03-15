@@ -16,7 +16,7 @@
     <tbody>
     <tr th:each="cart : ${carts}">
         <td th:text="${cart.cartItemCNT}"></td>
-        <td th:text="${cart.itemSeq}"></td>
+        <td th:text="${cart.itemSeq.itemSeq}"></td>
     </tr>
     </tbody>
 </table>
@@ -28,17 +28,18 @@
         DetailAddr : <input type="text" name="detailAddr"><br>
         Name : <input type="text" name="name"><br>
         Recipient_tel : <input type="text" name="recipient_tel"><br>
-        itemCNT : <input type="number" name="itemCNT"><br>
         Zipcode : <input type="text" name="zipcode"><br>
-        Total Price : <input type="number" name="totalPrice"><br>
-        MemberId : <input type="text" name="memberId">
+        <input id="id" type="text" name="memberId" value="" hidden="hidden">
         <button type="submit"> submit </button>
     </form>
     <br>
 </div>
 <br>
 <div>
-    <a href="/"> Move to Home </a>
+    <a href="/main"> Move to Home </a>
 </div>
 </body>
 </html>
+<script>
+    document.getElementById("id").value = localStorage.getItem("memberId");
+</script>
