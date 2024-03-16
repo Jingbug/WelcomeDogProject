@@ -9,11 +9,18 @@
       localStorage.setItem('memberId', memberId);
     }
   </script>
+    <title>Login Page</title>
+    <!-- Check the paths to the CSS files -->
+    <link rel="stylesheet" href="../수정전/style.css">
 </head>
 <body>
+  <div id="header">
+    <div class="logo">
+        <!-- Check the path to the image -->
+        <a href="../"><img src="https://gachi-prd-s3.s3.ap-northeast-2.amazonaws.com/item-img/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.png"></a>
+    </div>
 <div class="container">
   <div>
-    <h1>Login Page</h1>
     <form method="post" action="/members/login" enctype="multipart/form-data">
       ID : <input id="id" type="text" name="memberId"><br>
       PW : <input type="password" name="password">

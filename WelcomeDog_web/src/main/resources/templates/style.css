@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/ccs2?family=Note+sans+KR&display=swap');
+
+:root {
+    --basis-font-color: #000;
+}
+
+.logo>a>img {
+    width: 25%;
+    position: absolute;
+    top: 30%;
+    left: 65%;
+    transform: translate(-100%, -100%);
+}
+
+.container{
+    width: 410px;
+    position: absolute;
+    left: 57%;
+    top: 30%;
+    transform: translate(-50%,-50%);
+}
+
