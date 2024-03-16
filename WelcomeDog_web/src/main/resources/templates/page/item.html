@@ -21,7 +21,9 @@
             <td th:text="${item.itemSeq}"></td>
             <td th:text="${item.itemName}"></td>
             <td th:text="${item.price}"></td>
-            <td th:text="${item.itemImg}"></td>
+            <td>
+                <img th:src="${item.itemImg}" alt="Item Image" width="100" height="100">
+            </td>
             <td th:text="${item.itemInfo}"></td>
         </tr>
         </tbody>
